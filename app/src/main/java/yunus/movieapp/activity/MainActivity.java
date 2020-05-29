@@ -1,4 +1,4 @@
-package yunus.movieapp;
+package yunus.movieapp.activity;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import yunus.movieapp.R;
 import yunus.movieapp.adapter.MovieAdapter;
 import yunus.movieapp.model.Movie;
 import yunus.movieapp.retrofit.Api;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
+
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

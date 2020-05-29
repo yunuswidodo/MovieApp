@@ -11,5 +11,10 @@ public class Constant {
     public static String INTENT_TITLE = "TITLE";
     public static String INTENT_DESCRIPTION = "DESCRIPTION";
 
+    public static String MOVIE_ID = "";  // masuk movie adapter
+    public static String MOVIE_TITLE = "";
+
+
+
 
 }

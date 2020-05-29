@@ -1,9 +1,9 @@
-package yunus.movieapp;
+package yunus.movieapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import yunus.movieapp.R;
 import yunus.movieapp.retrofit.Constant;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

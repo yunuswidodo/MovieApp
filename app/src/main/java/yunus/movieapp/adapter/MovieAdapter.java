@@ -14,7 +14,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import yunus.movieapp.DetailActivity;
+import yunus.movieapp.activity.DetailActivity;
 import yunus.movieapp.R;
 import yunus.movieapp.model.Movie;
 import yunus.movieapp.retrofit.Constant;
@@ -67,6 +67,9 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
                 intent.putExtra(Constant.INTENT_bACKDROP,Constant.BACKDROP_PATH + model.getBackdrop_path());
                 intent.putExtra(Constant.INTENT_DESCRIPTION,model.getOverview());
                 context.startActivity(intent);
+
+                Constant.MOVIE_ID = String.valueOf(model.getId());  // conver int to string
+                Constant.MOVIE_TITLE = model.getTitle();
             }
         });
     }
