@@ -14,6 +14,8 @@ public class Constant {
     public static String MOVIE_ID = "";  // masuk movie adapter || ambil value dari Moview
     public static String MOVIE_TITLE = "";
 
+    public static String YOU_TUBE_KEY = "AIzaSyB4ysHiVg8_6KsQ3d1Mw88Uyg8sW3zYE-c";
+
 
 
 

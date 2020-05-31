@@ -46,7 +46,7 @@ public class TrailerActivity extends AppCompatActivity {
 
         YouTubePlayerFragment youtubeFragment = (YouTubePlayerFragment)  //harus sama dengan xmlnya
                 getFragmentManager().findFragmentById(R.id.youtubeFragment);
-        youtubeFragment.initialize("YOUR API KEY",
+        youtubeFragment.initialize(Constant.YOU_TUBE_KEY,
                 new YouTubePlayer.OnInitializedListener() {
                     @Override
                     public void onInitializationSuccess(YouTubePlayer.Provider provider,
