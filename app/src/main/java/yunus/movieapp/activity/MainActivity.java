@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        getMovie();
+        getMovie("popular"); // param Api | apiinterface
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //penggunaan retrofit
-    private void getMovie(){
+    private void getMovie(String category){  //categori biar bisa dinamis || jika ingin menggunakan method getmovie harus menggunakan param catergori dengan default "popular"
 
         ApiInterface apiInterface = Api.getUrl().create(ApiInterface.class);
-        Call<Movie> call = apiInterface.getMovie(Constant.KEY, "en-Us", "1");
+        Call<Movie> call = apiInterface.getMovie(category, Constant.KEY, "en-Us", "1");
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
@@ -95,7 +95,13 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_popular) {
+            getSupportActionBar().setTitle("Movie Populer");
+            getMovie("popular"); // param api
+            return true;
+        }else if (id == R.id.action_playing){
+            getSupportActionBar().setTitle("Movie now playing");
+            getMovie("now_playing"); // param api
             return true;
         }
 

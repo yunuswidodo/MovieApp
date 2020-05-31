@@ -11,6 +11,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import yunus.movieapp.R;
+import yunus.movieapp.activity.TrailerActivity;
 import yunus.movieapp.model.Video;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
@@ -40,8 +41,17 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
         final Video.Results model = models.get(position);
 
-        //menaruh judul pada text view
+        //list trailer
         holder.textView.setText(model.getName());
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TrailerActivity.youTubePlayer.loadVideo(model.getKey());   // cuevideo = tampilin dulu loadvideo = langsung putar
+            }
+        });
+
+        // ketika blum diapa"in baru klik vidio trailer dari activity detail || sebagai tumbnail agar tidak hitam
+        TrailerActivity.youTubePlayer.cueVideo(models.get(0).getKey());
 
 
     }

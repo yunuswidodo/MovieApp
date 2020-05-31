@@ -68,7 +68,8 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
                 intent.putExtra(Constant.INTENT_DESCRIPTION,model.getOverview());
                 context.startActivity(intent);
 
-                Constant.MOVIE_ID = String.valueOf(model.getId());  // conver int to string
+
+                Constant.MOVIE_ID = String.valueOf(model.getId());  // conver int to string || get id vidio trailer activity
                 Constant.MOVIE_TITLE = model.getTitle();
             }
         });

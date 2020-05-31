@@ -29,6 +29,8 @@ public class TrailerActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
 
+    public static YouTubePlayer youTubePlayer; // tambahin public static biar bisa diakses | vidio adapter
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,9 @@ public class TrailerActivity extends AppCompatActivity {
                 new YouTubePlayer.OnInitializedListener() {
                     @Override
                     public void onInitializationSuccess(YouTubePlayer.Provider provider,
-                                                        YouTubePlayer youTubePlayer, boolean b) {
-                        // do any work here to cue video, play video, etc.
-                        youTubePlayer.cueVideo("0LHxvxdRnYc");
+                                                        YouTubePlayer player, boolean b) {
+                        youTubePlayer= player; // varibel ini berperan sebagai youtube player disini
+
                     }
                     @Override
                     public void onInitializationFailure(YouTubePlayer.Provider provider,
